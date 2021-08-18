@@ -51,6 +51,11 @@ html {
 }
 
 body {
+  box-sizing: border-box;
+  /*better practice*/
+}
+
+body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   /*font-size: 16px;*/
@@ -59,8 +64,42 @@ body {
   color: #777;
   /*padding: 30px;*/
   padding: 3rem;
-  box-sizing: border-box;
-  /*better practice*/
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /*To eliminate the shakiness of animations*/
+  /*margin-bottom: 60px;*/
+  margin-bottom: 6rem;
+}
+.heading-primary--main {
+  display: block;
+  /*font-size: 60px;*/
+  font-size: 6rem;
+  font-weight: 400;
+  /*letter-spacing: 35px;*/
+  letter-spacing: 3.5rem;
+  animation: moveInLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  /*repeats itself 3 times
+  animation-iteration-count: 3;
+  */
+  /*Delays for 3 seconds then the animation starts
+  animation-delay: 3s;
+  */
+}
+.heading-primary--sub {
+  display: block;
+  /*font-size: 20px;*/
+  font-size: 2rem;
+  font-weight: 700;
+  /*letter-spacing: 17.4px;*/
+  letter-spacing: 1.75rem;
+  animation: moveInRight 2s ease-in-out;
+  /*one line animation parameters*/
 }
 
 .btn:link, .btn:visited {
@@ -146,42 +185,6 @@ body {
   /*for center middle heigth and width*/
   text-align: center;
   /*for center the button*/
-}
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  /*To eliminate the shakiness of animations*/
-  /*margin-bottom: 60px;*/
-  margin-bottom: 6rem;
-}
-.heading-primary--main {
-  display: block;
-  /*font-size: 60px;*/
-  font-size: 6rem;
-  font-weight: 400;
-  /*letter-spacing: 35px;*/
-  letter-spacing: 3.5rem;
-  animation: moveInLeft;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  /*repeats itself 3 times
-  animation-iteration-count: 3;
-  */
-  /*Delays for 3 seconds then the animation starts
-  animation-delay: 3s;
-  */
-}
-.heading-primary--sub {
-  display: block;
-  /*font-size: 20px;*/
-  font-size: 2rem;
-  font-weight: 700;
-  /*letter-spacing: 17.4px;*/
-  letter-spacing: 1.75rem;
-  animation: moveInRight 2s ease-in-out;
-  /*one line animation parameters*/
 }
 
 /*# sourceMappingURL=style.css.map */
