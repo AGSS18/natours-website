@@ -1,67 +1,83 @@
-* {
+*,
+*::after,
+*::before {
+  /*to prevent random behavors*/
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+  /*better practice*/
+}
+
+html {
+  /*font-size: 10px; /*10px cuse it will make easier to make the rems calculations*/
+  font-size: 62.5%;
+  /*It is better practice to use porcentage.. the default font size is 16px divided by 10 (cause we want 10px) is 62.5%... this allows the user to zoom in in or webpage*/
 }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /*font-size: 16px;*/
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  /*padding: 30px;*/
+  padding: 3rem;
+  box-sizing: border-box;
+  /*better practice*/
 }
 
 .header {
-  position: relative;
   height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      hsla(111, 55%, 64%, 0.8),
-      rgba(40, 180, 133, 0.8)
-    ),
-    url("../images/hero.jpg");
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(37, 180, 88, 0.8)), url("../images/hero.jpg");
   background-size: cover;
   background-position: top;
+  position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
 }
-
-.logo-box {
+.header__logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  /*top: 40px;
+  left: 40px;*/
+  top: 4rem;
+  left: 4rem;
 }
-
-.logo {
-  height: 35px;
+.header__logo {
+  /*height: 35px;*/
+  height: 3.5rem;
 }
-
-.text-box {
+.header__text-box {
   /*This is a div*/
-  position: absolute; /*for center middle heigth and width*/
-  top: 40%; /*for center middle heigth and width*/
-  left: 50%; /*for center middle heigth and width*/
-  transform: translate(-50%, -50%); /*for center middle heigth and width*/
-  text-align: center; /*for center the button*/
+  position: absolute;
+  /*for center middle heigth and width*/
+  top: 40%;
+  /*for center middle heigth and width*/
+  left: 50%;
+  /*for center middle heigth and width*/
+  transform: translate(-50%, -50%);
+  /*for center middle heigth and width*/
+  text-align: center;
+  /*for center the button*/
 }
 
 .heading-primary {
-  color: #ffffff;
+  color: #fff;
   text-transform: uppercase;
-  backface-visibility: hidden; /*To eliminate the shakiness of animations*/
-  margin-bottom: 60px;
+  backface-visibility: hidden;
+  /*To eliminate the shakiness of animations*/
+  /*margin-bottom: 60px;*/
+  margin-bottom: 6rem;
 }
-
-.heading-primary-main {
+.heading-primary--main {
   display: block;
-  font-size: 60px;
+  /*font-size: 60px;*/
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  /*letter-spacing: 35px;*/
+  letter-spacing: 3.5rem;
   animation: moveInLeft;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
-
   /*repeats itself 3 times
   animation-iteration-count: 3;
   */
@@ -69,103 +85,103 @@ body {
   animation-delay: 3s;
   */
 }
-
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
-  font-size: 20px;
+  /*font-size: 20px;*/
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
-  animation: moveInRight 2s ease-in-out; /*one line animation parameters*/
+  /*letter-spacing: 17.4px;*/
+  letter-spacing: 1.75rem;
+  animation: moveInRight 2s ease-in-out;
+  /*one line animation parameters*/
 }
 
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
   100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
-
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0);
   }
 }
-
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
   100% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
-
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
-  border-radius: 100px;
+  /*padding: 15px 40px;
+    border-radius: 100px;*/
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
   transition: all 0.2s;
   position: relative;
+  font-size: 1.6rem;
 }
-
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /*x, y, blurr, opacity*/
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  /*x, y, blurr, opacity*/
 }
-
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /*x, y, blurr, opacity*/
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  /*x, y, blurr, opacity*/
 }
-
-.btn-white {
-  background-color: white;
+.btn--white {
+  background-color: #fff;
   color: #777;
 }
-
+.btn--white::after {
+  background-color: #fff;
+}
 .btn::after {
-  content: ""; /*it is necessary to specify the content in this pseudo-element otherwise is not going to work*/
+  content: "";
+  /*it is necessary to specify the content in this pseudo-element otherwise is not going to work*/
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
   transition: all 0.4s;
 }
-
-.btn-white::after {
-  background-color: rgb(255, 255, 255);
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards; /*The keyframes styles will be applied before the delay*/
+  animation-fill-mode: backwards;
+  /*The keyframes styles will be applied before the delay*/
 }
+
+/*# sourceMappingURL=style.css.map */
