@@ -1,1 +1,7 @@
-
+@mixin clearfix {
+  &::after {
+    content: ""; //always have content otherwise is not going to show
+    display: table;
+    clear: both;
+  }
+}
