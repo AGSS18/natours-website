@@ -37,6 +37,15 @@
     }
   }
 
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
   &::after {
     content: ""; /*it is necessary to specify the content in this pseudo-element otherwise is not going to work*/
     display: inline-block;
