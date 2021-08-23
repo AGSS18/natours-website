@@ -1,0 +1,3 @@
+cd dropbox cd github cd natours-website // project location
+
+sass --watch scss/style.scss css/style.css //to run sass compilation
