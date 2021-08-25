@@ -36,11 +36,12 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    left: 0;
+    left: -15rem;
     z-index: 1500;
 
     opacity: 0; //to hide the links
     width: 0; //to hide the links
+    //display: none;
     transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
@@ -51,7 +52,7 @@
     transform: translate(-50%, -50%);
     list-style: none;
     text-align: center;
-    width: 100%;
+    //width: 100%;
   }
 
   &__item {
@@ -100,6 +101,9 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
+    left: 0;
+
+    display: inline-block;
   }
 
   //ICON
