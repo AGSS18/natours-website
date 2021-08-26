@@ -2,9 +2,18 @@
   max-width: $grid-width; //normal dimension for grids
   margin: 0 auto;
 
+  @include response(tab-port) {
+    max-width: $grid-width-small;
+    padding: 0 3rem;
+  }
+
   &:not(:last-child) {
     //everithing except the last child (not operator)
     margin-bottom: $gutter-vertical;
+
+    @include response(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   @include clearfix;
@@ -15,6 +24,15 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include response(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include response(tab-port) {
+      width: 100% !important;
     }
   }
 
